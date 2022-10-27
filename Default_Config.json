@@ -1,0 +1,65 @@
+{
+  "FileNames": {
+    "a_output_json": "A_Output.json",
+    "ui_output_json": "UI_Output.json",
+    "b_output_json": "B_Output.json",
+    "b_output_csv": "B_Preprocessed.csv",
+    "c_output_csv": "C_SyntheticData.csv",
+    "d_output_json": "D_Output.json",
+    "analysis_log": "analysis.log",
+    "report_pdf": "Report_V1.pdf",
+    "report_dir": "report"
+  },
+  "ModuleC": {
+    "default_epochs": 150,
+    "plot_losses": true,
+    "log_details": true,
+    "log_dir": "report/",
+    "training_max_minutes": 400
+  },
+  "ModuleD": {
+    "precision": 3
+  },
+  "SupportedMocks": {
+    "name_male": [
+      "en_EN"
+    ],
+    "lastname_female": [
+      "tr_Tr"
+    ],
+    "addresses": []
+  },
+  "SupportedExtensions": [
+    "csv",
+    "txt",
+    "arff",
+    "tsv",
+    "xls",
+    "xlsx"
+  ],
+  "SupportedSeparators": [
+    ";",
+    ",",
+    " ",
+    "\t"
+  ],
+  "Missing": {
+    "HiddenSigns": {
+      "?": "?",
+      " ": "space",
+      "none": "none",
+      "null": "null",
+      "na": "na"
+    },
+    "DropThreshold": 60,
+    "FillStrategy": "mode"
+  },
+  "CategoryThreshold": 0.01,
+  "Constraints": {
+    "MinRow": 100,
+    "MaxSample": 100000,
+    "MinSample": 500,
+    "MaxFileMB": 250,
+    "MaxComplexity": 100000000
+  }
+}
