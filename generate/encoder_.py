@@ -1,5 +1,5 @@
 import tensorflow as tf
-from c_data_generation.sampling_ import Sampling
+from generate.sampling_ import Sampling
 
 
 class Encoder(tf.keras.layers.Layer):
