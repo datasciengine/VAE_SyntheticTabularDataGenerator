@@ -1,7 +1,4 @@
-data
-utils
 venv
-d_evaluation_metrics
 *.pyc
 ### JetBrains ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
