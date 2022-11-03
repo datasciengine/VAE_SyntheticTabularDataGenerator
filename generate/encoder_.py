@@ -56,6 +56,15 @@ class Encoder(tf.keras.layers.Layer):
 
         self.bn3 = tf.keras.layers.BatchNormalization()
 
+        self.conv4 = tf.keras.layers.Conv1D(filters=self.filters,
+                                            kernel_size=self.kernel_size,
+                                            strides=self.strides,
+                                            padding=self.padding,
+                                            activation=self.activation)
+
+        self.bn4 = tf.keras.layers.BatchNormalization()
+
+
         self.dropout = tf.keras.layers.Dropout(rate=self.dropout_rate)
         self.flatten = tf.keras.layers.Flatten()
 
@@ -76,6 +85,9 @@ class Encoder(tf.keras.layers.Layer):
 
         x = self.conv3(x)
         x = self.bn3(x)
+
+        x = self.conv4(x)
+        x = self.bn4(x)
 
         x = self.dropout(x)
 
