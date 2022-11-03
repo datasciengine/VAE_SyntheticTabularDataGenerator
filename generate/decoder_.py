@@ -49,9 +49,17 @@ class Decoder(layers.Layer):
                                                        padding=self.padding,
                                                        activation=self.activation)
         self.bn3 = tf.keras.layers.BatchNormalization()
+
+        self.deconv4 = tf.keras.layers.Conv1DTranspose(filters=self.filters,
+                                                       kernel_size=self.kernel_size,
+                                                       strides=self.strides,
+                                                       padding=self.padding,
+                                                       activation=self.activation)
+        self.bn4 = tf.keras.layers.BatchNormalization()
+
         self.dropout = tf.keras.layers.Dropout(rate=self.dropout_rate)
         self.flatten = tf.keras.layers.Flatten()
-        
+
         self.dense_output = tf.keras.layers.Dense(self.original_dim,
                                                   activation="tanh")
 
@@ -67,8 +75,10 @@ class Decoder(layers.Layer):
         x = self.deconv3(x)
         x = self.bn3(x)
 
-        x = self.dropout(x)
+        x = self.deconv4(x)
+        x = self.bn4(x)
 
+        x = self.dropout(x)
         x = self.flatten(x)
 
         return self.dense_output(x)
